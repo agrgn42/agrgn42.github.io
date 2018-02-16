@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <!-- <meta http-equiv="refresh" content="1"> -->
     <title>ICE - HTML - Cool Cats</title>
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script>
+      webshims.setOptions('forms-ext', {types: 'date'});
+      webshims.polyfill('forms forms-ext');
+    </script>
   </head>
 
   <body>
