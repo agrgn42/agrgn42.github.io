@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <!-- <meta http-equiv="refresh" content="1"> -->
     <title>ICE - HTML - Cool Cats</title>
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script>
+      webshims.setOptions('forms-ext', {types: 'date'});
+      webshims.polyfill('forms forms-ext');
+    </script>
   </head>
 
   <body>
@@ -13,14 +18,15 @@
       <nav>
         <ul>
           <li><a href="index.html">Angela Schopke</a></li>
-          <li><a href="cyearee.github.io/ICE1/index.html">Yea Ree Chang</a></li>
+          <li><a href="https://cyearee.github.io/ICE1/index.html">Yea Ree Chang</a></li>
         </ul>
       </nav>
     </header>
 
       <section>
+        <h2>Page Narrative</h2>
         <img src="images/539_ICE-HTML_Sketch.JPEG" alt="Sketch of this website's layout" width="500" height="300">
-        <p>The above image is our first attempt at sketching the blueprint for this website. I write a poetic line to complement this sketch: When the green line described the rectangular confinements of space, the emptiness died.</p>
+        <p>The above image is our first attempt at sketching the blueprint for this website. I write a poetic line to complement this sketch: When the green line described the rectangular confinements of space, the emptiness died. I will also now provide responses to questions 2, 3 and 7 from the assignment prompt. In response to queestion 2, the most notable difference between Chrome and each of Safari and Firefox, is that the date picker option does not work. I chose to try Webshim's polyfill to address this issue. It appears to have done the trick for Firefox, but not for Safari. In response to question 3, initially, it was not possible to click on the text next to the bubbles in order to select a given option. This functionality is important given digital norms and expectations that motivate users' experiences of a site. In response to question 7, I did not find any new issues on revalidating my code.</p>
         <img src="images/539_ICE-Choreo_Sketch.JPEG" alt="Drawing of choreography patterns" width="500" height="300">
         <p>The above image describes a choreographic moment experienced in the fall of 2017. The absurd moment echoed a scene in feature-length film, "Rubber". Watch, run.</p>
         <img src="https://bigtennetworks.files.wordpress.com/2017/08/universe-1044107_1280-e1502746470868.jpg?w=970&h=546&crop=1" alt="Silhouette of man in front of expansive green universe image" width="500">
@@ -52,9 +58,9 @@
         <label for="water"> Water</label><br>
       </form>
 
-      
+
       <section>
-        <h1>JFK 2nd Inaugural Address Audio</h1>
+        <h2>JFK 2nd Inaugural Address Audio</h2>
         <audio controls>
           <source src="audio/539_JFK-audio.mp3" type="audio/mpeg">
           Your browser does not support this element.
@@ -62,21 +68,14 @@
       </section>
 
       <section>
-        <h1>Instructional Ballet Video</h1>
+        <h2>Instructional Ballet Video</h2>
         <iframe
           width="560"
           height="315"
           src="https://www.youtube.com/embed/AFhGAj-_jSw"
-          frameborder="0"
-          gesture="media"
-          allow="encrypted-media"
           allowfullscreen>
         </iframe>
       </section>
 
 
     </body>
-
-
-
-
