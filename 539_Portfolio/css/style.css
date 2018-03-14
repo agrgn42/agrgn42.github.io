@@ -20,6 +20,11 @@ html, body{
 	z-index: -999;
 	color: #E3AD02;
 }
+
+a {
+	text-decoration: none;
+}
+
 a.skip:active, a.skip:focus, a.skip:hover {
     position:fixed;
     top: auto;
