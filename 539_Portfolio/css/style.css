@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+}
+
+/*-----MAIN-----*/
+html {
+  box-sizing: border-box;
+}
+html, body{
+	height: 100%;
+}
+/*skip content*/
+.skip{
+	position: absolute;
+	left: -999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: -999;
+	color: #E3AD02;
+}
+a.skip:active, a.skip:focus, a.skip:hover {
+    position:fixed;
+    top: auto;
+    left: auto; 
+	width: auto; 
+	height: auto; 
+	overflow: visible;
+	z-index: 999;
+}
+html, body, header, footer{
+    background-color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header, footer, .logo {
+	background-color: black;
+	color: white; 
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Julius Sans One', sans-serif;
+}
+p{
+	font-family: 'Kanit', sans-serif;
+}
+h1{ 
+	font-size: 1.75em;
+}
+h2{
+	font-size: 1.5em;
+}
+h3{
+	font-size: 1.17em;
+}
+h4{
+	font-size: 1.12em;
+}
+h5{
+	font-size: .83em;
+}
+h6{
+	font-size: .75em;
+}
+
+
+.main-content{
+	flex: 1 0 auto;
+	margin-top: 110px;
+}
+
+
+/*-----HEADER & NAVIGATION-----*/
+header{
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+/*mobile-first*/
+.top-nav ul{
+	list-style-type: none;
+	background-color: black;
+}
+
+.top-nav ul li a{
+	display: inline-block;
+	float: right;
+	font-size: 1em;
+	color: white;
+	text-decoration: none;
+	padding: 2.5em 1em 0em 1em;
+
+}
+
+.menu-icon a{
+	color: white;
+}
+
+.top-nav ul li a.current-page{
+	color: gray;
+}
+
+.top-nav ul li a:hover, .menu-icon a:hover, .top-nav ul li a:focus, .menu-icon a:focus, .top-nav ul li a:active, .menu-icon a:active{
+    color: gray;
+    font-weight: bold;
+}
+
+
+/*-----LOGO-----*/
+.logo{
+	background-color: black; /*CHANGE*/
+	margin: 0;
+	float: left;
+}
+
+.logo img{
+	height: 4em;
+}
+
+/*-----FOOTER-----*/
+footer{
+	position:absolute;
+   	bottom:0;
+   	width:100%;
+   	height:60px;
+   	background: black;
+   	text-align: center;
+}
+footer p{
+	padding-top: 1.5em;
+	padding-bottom: .75em;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: .9em;
+}
+
+.icon{
+	padding: .5em .25em 0;
+	height: 25px;
+}
+
+/*-----HOMEPAGE-----*/
+/*svg {
+	background: blue;
+}
+*/
+.main-content-home{
+	margin-top: 250px;
+}
+
+.home-flag{
+	color: black;
+	display: flex;
+	flex-direction: row;
+	max-width: 300px;
+	margin: auto;
+	padding: 1.5em;
+}
+
+
+/*-----CONTACT PAGE ------*/
+
+.form{
+	display: block;
+	margin: auto;
+	padding: 1.5em;
+
+}
+

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="UTF-8"/>
+      <title>Angela's Portfolio</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--Style-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
+  <script src="https://d3js.org/d3.v5.js"></script>
+  </head>
+
+
+<body class="body body-home">
+  <a href="#main-content" class="skip">Skip navigation</a>
+  <header>
+    <nav id = "top-nav" class="top-nav">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="angelaschopke home"></a>
+          </div>
+            <ul>
+                <li><a class="current-page" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="submit.html">Your Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+    </nav>
+  </header>
+  
+  <section>
+
+    <script>
+
+      var canvas = d3.select("section")
+          .append("svg")
+          .attr('height', 700)
+          .attr('width', 800)
+          .append("g")
+
+      d3.json("ne_10m_admin_1_states_provinces.json", function (data) {
+
+          var group = canvas.selectAll("g")
+            .data(data.features)
+            .enter()
+            .append("g");
+
+          var projection = d3.geo.mercator().scale(7300).translate([0,1980]);
+          var path = d3.geo.path().projection(projection);
+
+          var areas = group.append("path")
+            .attr("d", path)
+            .attr("class", "area")
+            .attr("fill", "steelblue");
+
+          group.append("text")
+            .attr("x", function(d) {return path.centroid(d)[0];})
+            .attr("y", function(d) {return path.centroid(d)[1];})
+            .attr("text-anchor", "middle")
+            .text(function(d) {return d.properties.LNNAMN});
+
+      });
+
+
+    </script>
+
+
+  </section>
+  
+  <footer class="footer">
+    <p>This site was created by Angela Schöpke &copy; 2018</p>
+  </footer>
+
+  
+ 
+
+</body>
+
+</html>
