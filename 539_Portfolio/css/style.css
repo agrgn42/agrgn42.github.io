@@ -118,6 +118,7 @@ header{
 	background-color: black; /*CHANGE*/
 	margin: 0;
 	float: left;
+	font-size: 2em;
 }
 
 .logo img{
