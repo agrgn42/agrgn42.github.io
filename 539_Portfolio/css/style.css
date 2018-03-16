@@ -87,22 +87,26 @@ header{
 	font-size: 100%;
     width: 100%;
     position: fixed;
+    display: flex;
 }
 
 /*mobile-first*/
 .top-nav ul{
+	display: inline-flex;
+	flex-direction: row;
+	align-self: flex-end;
+	flex: 1 0 0;
 	list-style-type: none;
 	background-color: black;
+	padding-bottom: 1em;
+	padding-top: 0em;
 }
 
 .top-nav ul li a{
-	display: inline-block;
-	float: right;
 	font-size: 1em;
 	color: white;
 	text-decoration: none;
 	padding: 2.5em 1em 0em 1em;
-
 }
 
 .menu-icon a{
@@ -120,11 +124,14 @@ header{
 
 
 /*-----LOGO-----*/
-.logo{
+.logo {
 	background-color: black; /*CHANGE*/
 	margin: 0;
 	padding: .5em;
-	float: left;
+	display: inline-flex;
+	flex-direction: row;
+	align-self:  flex-start;
+	flex: 2 0 0;
 	font-family: 'Julius Sans One', sans-serif;
 	font-size: 2em;
 	color: white;
@@ -136,7 +143,7 @@ header{
 }
 
 /*-----FOOTER-----*/
-footer{
+footer {
 	position:absolute;
    	bottom:0;
    	width:100%;
@@ -157,25 +164,63 @@ footer p{
 }
 
 /*-----HOMEPAGE-----*/
-/*svg {
-	background: blue;
-}
-*/
-.main-content-home{
-	margin-top: 250px;
+#map {
+	margin:0;
+	position:fixed;
+	top:67px;
+	right:0;
+	bottom:0;
+	left:0;
 }
 
-.home-flag{
+svg {
+	width:100%;
+    height: 100%;
+}
+
+
+/*.main-content-home{
+	margin-top: 250px;}*/
+
+/*.home-flag{
 	color: black;
 	display: flex;
 	flex-direction: row;
 	max-width: 300px;
 	margin: auto;
 	padding: 1.5em;
+}*/
+
+
+.subunit {
+	fill: white;
+}
+
+.subunit-boundary {
+  fill: white;
+  stroke: black;
+  stroke-linejoin: round;
 }
 
 
-/*-----CONTACT PAGE ------*/
+.subunit-label {
+  fill: black;
+  fill-opacity: .5;
+  font-size: 1em;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+
+text {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 10px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+
+/*-----CONTACT PAGE ------
 
 .form{
 	display: block;
