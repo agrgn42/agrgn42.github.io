@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/style.css" rel="stylesheet">  <!-- newly added -->
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet">
+		<title>Employment Application Form</title>
+	</head>
+
+	<body>
+		<h2 id="title"> Your Dream Job at Anand's Bakery Starts Here... </h2>
+		<form name="application" action="" method="post">
+
+
+      <h4>BASIC INFORMATION</h4> <!-- changed this -->
+   <div>
+	</a>
+
+      	<!-- Content -->
+        <fieldset>
+			<legend>Account Information:</legend><br>
+			<label> First name:<input type="text" name="fname"   autofocus required>
+			</label><br>
+
+		  	<label for="lname"> Last name:<input type="text" name="lname"></label><br>
+
+		  	<label> Email: <input type="email" name="email"   placeholder = "myname@domain.com" required></label><br>
+		  	<p>Required input format is "xxx@xxxx.xxx"</p>
+		  	
+		  	<label> Password: <input type="password"   name="password1" required></label><br>
+
+		  	<label> Confirm Password: *<input type="password"   name="password2" onchange="validatePass(this)" required></label><br>
+		</fieldset><br>
+
+		<fieldset>
+			<legend>Contact Information:</legend><br>
+			<label>Phone number: <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"placeholder="(555)555-5555"></label><br>
+			<p>Required input format is "(555)555-5555"</p>
+
+		<label>Country of Citizenship: <select id="country" class="bfh-countries" data-country="US"></select></label><br>
+		<label> Address: <input type="text" id="address" name="address" size="50" placeholder = "1234 N Wells St"></label><br>
+		<p>Required input format is "55555 Street Name"</p>
+		<label> City: <input type="text" name="city"  placeholder = "Ann Arbor"></label><br>
+		<p>Required input format is "City Name"</p>
+		<label>State: <select class="form-control bfh-states" data-country="US" data-state="MI" required></select></label><br>
+		<p>Please select from the drop-down</p>
+		<label> Zip code: <input type="text" name="Zip code"  placeholder = "48108"></label><br> 
+		<p>Required input format is "55555"</p> 
+		</fieldset><br>
+      </div>
+    
+
+	<div>
+
+      <h4>EDUCATION & WORK EXPERIENCE</h4> <!-- changed this -->
+        <fieldset> 
+		  <legend>Educational Information:</legend><br>
+		  
+		  <div id="education">
+		  <label> Degree:
+		  <select name="degree">
+				<option value="High school">High school</option>
+				<option value="BS">B.S</option>
+				<option value="BA">B.A</option>
+				<option value="Meng">M.Eng</option>
+				<option value="MA">M.A</option>
+				<option value="MS">M.S</option>
+				<option value="PhD">PhD</option>
+		  </select></label><br>
+
+		  <label> Institution name: <input type="text" name="inst_name" placeholder = "University of Michigan"></label><br>
+
+		  <label> Major: <input type="text" name="Major" placeholder = "Information System"></label><br>
+
+		  <label> GPA: <input type="number" step="any" name="GPA" min="0" max="4"></label> /4.0<br>
+
+		
+
+		<button id="addDegree"> Add degree </button>
+</div>
+		</fieldset><br>
+
+			<fieldset>
+			<legend>Work Experience:</legend><br>
+			<div id="work">
+				<label>Company Name: <input type="text" name="name" placeholder="Google"></label><br>
+				<label>Job Title: <input type="text" name="title" placeholder="Software Engineer"></label><br>
+				<label>Join Date: <input type="date" name="joindate"></label><br>
+				<label>End Date: <input type="date" name="enddate"></label><br>
+
+			</div>
+				<!-- Can automatically populate the duration using Javascript -->
+				<button id="addWork">Add Employer</button>
+			</fieldset>
+			<br>
+
+      </div>
+    
+      <div>
+      <h4 id="pos-text">POSITION</h4> <!-- changed this -->
+   
+
+        <fieldset>
+			<legend>Type of Work:</legend><br>
+			<legend>Type of position you are interested in applying for:</legend><br>
+				<label><input type="checkbox" name="position" value="internship"> Internship</label><br>
+				<label><input type="checkbox" name="position" value="full-time"> Full-time</label><br>
+				<label><input type="checkbox" name="position" value="part-time"> Part-time</label><br>
+			</fieldset><br>
+			
+			<!-- Resume ( ) and cover letter (optional) -->
+			<fieldset>
+			<legend>Resume and Cover Letter:</legend><br>
+			<label>Upload Resume: *<input type="file" name="resume" accept="application/pdf"></label><br>
+			<label>Upload Cover Letter: <input type="file" name="coverletter" accept="application/pdf"></label><br>
+			</fieldset><br>
+
+			<fieldset>
+			<legend>Position are you interested in applying for:</legend><br>
+			<select name="position">
+				<optgroup label="Information Technology">
+					<option>Network Engineer</option>
+				</optgroup>
+				<optgroup label="Finance">
+					<option>Financial Analyst</option>
+				</optgroup>
+				<optgroup label="Software Development">
+					<option>Project Manager</option>
+				</optgroup>
+				<optgroup label="Legal">
+					<option>Attorney</option>
+				</optgroup>
+				<optgroup label="Human Resources">
+					<option>Coordinator</option>
+				</optgroup>
+				<optgroup label="Research">
+					<option>Research Associate</option>
+				</optgroup>
+				<optgroup label="Transport">
+					<option>Driver</option>
+				</optgroup>
+			</select><br><br>
+			
+			<legend>Office Location:
+
+			<input list="cities" name="locations" placeholder="Ann Arbor">
+			<datalist id="cities">
+				<option value="New York">
+				<option value="San Francisco">
+				<option value="Detroit">
+				<option value="Ann Arbor">
+				<option value="Chicago">
+				<option value="Pittsburgh">
+			</datalist></legend><br>
+
+			<legend>Expected Start Date: <input type="date" name="startdate"></legend><br>
+			
+			<legend>Expected Salary: $<input type="text" name="salary">
+			</legend><br>
+
+			<legend>Personal Website/Portfolio (Optional): <input type="url" name="website" placeholder="https://www.mywebsite.com"></legend><br>
+			<p class="main-item">Required input format is "http://www.mywebsite.com" or "https://www.mywebsite.com"</p>
+			
+			</fieldset>
+			<br>
+      </div>
+   
+	<input type="submit" value = "Apply">
+
+	</form>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-formhelpers.min.js"></script>
+	
+	</body>
+</html>
