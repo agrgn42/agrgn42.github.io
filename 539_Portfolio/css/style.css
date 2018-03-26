@@ -215,10 +215,18 @@ svg {
 text {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 10px;
-  opacity: 0.1;
+/*  opacity: 0.1;*/
   pointer-events: none;
 }
 
+.feature {
+  fill: white;
+  cursor: pointer;
+}
+
+.feature.active {
+  fill: blue;
+}
 
 /*-----CONTACT PAGE ------
 

@@ -35,7 +35,8 @@
     <script>
 
       var width = 1100,
-          height = 200;
+          height = 200
+          active = d3.select(null);
 
       var aspect = width / height,
           map = d3.select('#map');
@@ -48,9 +49,13 @@
       });
 
       var svg = d3.select("#map")
-          .append("svg")
+          .append("svg:svg")
           .attr("viewBox", "0 0 1280 400")
-          .attr("preserveAspectRatio", "xMidYMid meet");
+          .attr("preserveAspectRatio", "xMidYMid meet")
+          .call(d3.zoom().on("zoom", function () {
+             svg.attr("transform", d3.event.transform)
+          }))
+          .append("g");
 
       var projection = d3.geoMercator()
             .scale(204)
@@ -59,35 +64,90 @@
           var path = d3.geoPath()
             .projection(projection)
 
+      // var g = svg.append("g")
+      //     .style("stroke-width", "1.5px");
+
       d3.json("states_provinces_topo.json", function(data) {
 
           console.log(data);
 
           var subunits = topojson.feature(data, data.objects.ne_10m_admin_1_states_provinces);
-         
-          svg.selectAll(".subunit")
+
+          var tooltip = d3.select(".subunit-label")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "1000")
+            .style("visibility", "hidden")
+            // .data(subunits.features)
+            // .enter().append("text")
+            .attr("class", function(d) {return "subunit-label " + d.id;})
+            // .attr("transform", function(d) {return "translate(" + path.centroid(d) + ")";})
+            .attr("dy", ".1em")
+            .text(function(d) {return d.properties.name});
+                 
+          svg.selectAll(".subunit svg")
             .data(subunits.features)
             .enter().append("path")
             .attr("class", function(d) {return "subunit " + d.id;})
-            .attr("d", path);
+            .attr("d", path)
+            .append("svg:subunit-label")
+            .on("mouseover", function(d){return tooltip.style("visibility", "visible");})
+            .on("mousemove", function(d){return tooltip.style("top",
+                (d3.event.pageY-1000)+"px").style("left",(d3.event.pageX+1000)+"px");})
+            .on("mouseout", function(d){return tooltip.style("visibility", "hidden");});
+        
 
           svg.append("path")
             .datum(topojson.mesh(data, data.objects.ne_10m_admin_1_states_provinces))
             .attr("d", path)
             .attr("class", "subunit-boundary");
 
-          svg.selectAll(".subunit-label")
-            .data(subunits.features)
-            .enter().append("text")
-            .attr("class", function(d) {return "subunit-label " + d.id;})
-            .attr("transform", function(d) {return "translate(" + path.centroid(d) + ")";})
-            .attr("dy", ".1em")
-            .text(function(d) {return d.properties.name});
 
           projection.fitSize([width, height], subunits);
 
+
+
+          // function hover(){
+          //     svg.selectAll(".subunit-label")
+          //       .data(subunits.features)
+          //       .enter().append("text")
+          //       .attr("class", function(d) {return "subunit-label " + d.id;})
+          //       .attr("transform", function(d) {return "translate(" + path.centroid(d) + ")";})
+          //       .attr("dy", ".1em")
+          //       .text(function(d) {return d.properties.name});
+          // }
+      // function clicked(d) {
+      //     if (active.node() === this) return reset();
+      //     active.classed("active", false);
+      //     active = d3.select(this).classed("active", true);
+
+      //     var bounds = path.bounds(d),
+      //         dx = bounds[1][0] - bounds[0][0],
+      //         dy = bounds[1][1] - bounds[0][1],
+      //         x = (bounds[0][0] + bounds[1][0]) / 2,
+      //         y = (bounds[0][1] + bounds[1][1]) / 2,
+      //         scale = .9 / Math.max(dx / width, dy / height),
+      //         translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+      //     g.transition()
+      //         .duration(750)
+      //         .style("stroke-width", 1.5 / scale + "px")
+      //         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+      //   }
+
+      //   function reset() {
+      //     active.classed("active", false);
+      //     active = d3.select(null);
+
+      //     g.transition()
+      //         .duration(750)
+      //         .style("stroke-width", "1.5px")
+      //         .attr("transform", "");
+      //   }
+
       });
 
+      // , function(a, b) { return a !== b; }
     </script>
 
 
