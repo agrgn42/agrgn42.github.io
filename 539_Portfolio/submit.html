@@ -1,3 +1,9 @@
+<?php
+if($_POST["form"]) {
+    mail("angela.schopke@gmail.com", "Dancemap media submission", $_POST["message"], "From: an@email.address");
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +17,8 @@
   <link rel="stylesheet" type="text/css" href="css/responsive.css">
   <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/css/bootstrap-formhelpers.css">
+
   </head>
 
 
@@ -29,22 +37,98 @@
             </ul>
     </nav>
   </header>
+<main>
+  
 
-  <form class='form'>
-        <label for="name">Name </label>
-        <input type="text" name="name" id = "name"><br>
-        <label for="email">Email </label>
-        <input type="text" name="DOB" id = "dob"><br>
-        <label for="subject">Subject </label>
-        <input type="text" name="subject" id = "subject"><br>
-        <label for="message">Message </label>
-        <input type="text" name="message" id = "message"><br>
+  <div class="submitform">
+    <form name="application" action="contact.php" method="post">
+      <h1 id="title">Submit your dance media!</h1>
+        <!-- Content -->
+        <fieldset>
+          <legend>About the Dance</legend><br>
+          
+          <label class="heading"> Name of the dance you'd like to share:<input type="text" name="dancename" autofocus required>
+          </label><br>
+          <p>Select the name of the dance you'd like to share a story about.</p>
+
+          <label class="heading">Dance Location</label>
+          <p>Where was this photo / video / text media created? Please select from the dropdown menus.</p>
+          
+          <label for="lname">Country:  <select id="countries_states1" class="input-medium bfh-countries" data-country="US" required></select></label><br>
+          <p>Please select the appropriate country from the drop-down menu.</p>
+          
+          <label>Province or State: <select class="input-medium bfh-states" data-country="countries_states1" required></select></label><br>
+          <p>Please select the appropriate province or state from the drop-down menu.</p>
+          
+          <label>City: <input type="text" name="city" required></label><br> <!--doesn't work-->
+          <p>Please select the appropriate city from the drop-down menu.</p>
+
+          <label> Address: <input type="text" id="address" name="address" size="50" placeholder = "1234 N Wells St"></label><br>
+          <p>Optional. If you fill out, the required input format is "55555 Street Name"</p>
+
+        </fieldset><br>
+
+        <fieldset>
+        <legend>Media </legend><br>
+
+        <label class="heading">Photos of the dance</label><br>
+        
+        <label>Upload photos: <input type="file" name="photos" accept="application/jpeg application/png"></label><br>
+        
+        <label>Photo credit: <input type="text" name="photocredit"></label><br>
+        <p>If you have taken the uploaded photo(s), please note that you are to be credited for the photos. If you did not take the uploaded photo(s), please include the URL of the website(s) you found the photo(s) on, the date(s) they were published, and the name of the photographer(s). We WILL NOT publish any photos without credits.</p>
+        
+        <label class="heading">Videos of the dance</label><br>
+
+        <label>Input video URL: <input type="url" name="website" placeholder="https://www.youtube.com"></label><br>
+        <p>Currently, we only accept YouTube links. Required input format is "http://www.youtube.com/..." or "https://www.youtube.com/,,,".</p>
+        </fieldset><br>
+
+
+        <fieldset>
+          <legend>About You</legend><br>
+
+          <label class="heading">Country of Submission: <select id="countries_states1" class="input-medium bfh-countries" data-country="US" required></select></label><br>
+          <p>Where are you submitting this story from? Please select the appropriate country from the drop-down menu.</p>
+
+          <label class="heading">Province or State: <select class="input-medium bfh-states" data-country="countries_states1" required></select></label><br>
+          <p>Please select the appropriate province or state from the drop-down menu.</p>
+
+          <label class="heading">City: <input type="text" name="city" required></label><br>
+          <p>Required input format is "City Name"</p>
+         
+          <label class="heading">Gender: <input type="text" name="gender"></label><br> 
+          <p>Which gender do you identify most closely with? Though sometimes it can be difficult to talk about, gender is an important part of many dances and global culture. This info will help us to understand the important lens of diversity that gender lends to the global community. Feel free to make note of as many genders as you identify with, using commas to separate each value.</p> 
+
+          <label class="heading">Ethnicity: <input type="text" name="gender"></label><br> 
+          <p>Which ethnicity do you identify most closely with? Like gender, ethnicity can be a hard topic to discuss. We feel talking about ethnicity is important to understanding the vibrant fabric that makes up Global Afghanistan. Feel free to make note of as many ethnicities as you identify with, using commas to separate each value.</p> 
+
+          <label class="heading">Year of birth: <input type="text" name="gender"></label><br> 
+          <p>Which year were you born? Like gender, ethnicity can be a hard topic to discuss. We feel talking about ethnicity is important to understanding the vibrant fabric that makes up Global Afghanistan. Feel free to make note of as many ethnicities as you identify with, using commas to separate each value.</p> 
+
+          <label class="heading">Email: <input type="email" name="email"   placeholder = "myname@domain.com" required></label><br>
+          <p>Required input format is "xxx@xxxx.xxx". This email will be used to send you a receipt of your media submission.</p>
+        </fieldset><br>
+        
+
+      <input type="submit" value = "Submit">
 
   </form>
+  </div>
+</main>
 
   <footer class="footer">
     <p>This site was created by Angela Schöpke &copy; 2018</p>
   </footer>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-formhelpers.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/js/bootstrap-formhelpers.js"></script>
+  
 
 
 </body>

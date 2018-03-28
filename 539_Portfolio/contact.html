@@ -30,16 +30,32 @@
     </nav>
   </header>
 
+  <main>
+  <div class='contactform'>
   <form class='form'>
-        <label for="name">Name </label>
-        <input type="text" name="name" id = "name"><br>
-        <label for="email">Email </label>
-        <input type="text" name="DOB" id = "dob"><br>
-        <label for="subject">Subject </label>
-        <input type="text" name="subject" id = "subject"><br>
-        <label for="message">Message </label>
-        <input type="text" name="message" id = "message"><br>
+    
+      <fieldset class='contactform'>
+
+          <label>Name: <br>
+          <input type="text" name="name" class="contact"></label>
+
+          <label class="contact">Email: <br>
+          <input type="email" name="email" class="contact" placeholder = "myname@domain.com" required></label>
+          
+          <p>Required input format is "xxx@xxxx.xxx". This email will be used to send you a receipt of your media submission.</p>
+
+          <label class="contact">Subject: <br>
+          <input type="text" name="subject" class="contact"></label>
+
+          <label class="contact">Message: <br>
+          <textarea name="message" class="contact"></textarea></label>
+
+        </fieldset><br>
+
+    
   </form>
+  </div>
+</main>
 
 
   <footer class="footer">
