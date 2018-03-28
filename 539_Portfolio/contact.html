@@ -35,6 +35,7 @@
   <form class='form'>
     
       <fieldset class='contactform'>
+<!--         <legend>Contact #DANCEMAP</legend> -->
 
           <label>Name: <br>
           <input type="text" name="name" class="contact"></label>
@@ -42,7 +43,7 @@
           <label class="contact">Email: <br>
           <input type="email" name="email" class="contact" placeholder = "myname@domain.com" required></label>
           
-          <p>Required input format is "xxx@xxxx.xxx". This email will be used to send you a receipt of your media submission.</p>
+          <p class="pcontact">Required input format is "xxx@xxxx.xxx". This email will be used to send you a receipt of your media submission.</p>
 
           <label class="contact">Subject: <br>
           <input type="text" name="subject" class="contact"></label>
@@ -50,7 +51,8 @@
           <label class="contact">Message: <br>
           <textarea name="message" class="contact"></textarea></label>
 
-        </fieldset><br>
+        </fieldset>
+        <input type="submit" value = "Submit">
 
     
   </form>
