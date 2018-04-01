@@ -1,0 +1,64 @@
+body {
+	background-color: #990033;
+}
+
+
+legend {
+	font-size: 1.25em;
+	color: #ccc;
+}
+
+label {
+	color: #ccc;
+}
+
+label.heading {
+	color: #ccc;
+}
+
+p {
+	color: #bfbfbf;
+}
+
+h1 {
+	color: #ccc;
+}
+
+
+/*header {
+	color:black;
+}
+
+a {
+	color: black;
+}*/
+
+
+/*
+.top-nav ul li a{
+
+	color: black;
+}
+
+
+.menu-icon a{
+	color: black;
+
+}
+
+.top-nav ul li a.current-page{
+	color:black;
+	text-decoration: underline;
+/*	z-index: 100;*/
+}
+
+.top-nav ul li a:hover, .menu-icon a:hover, .top-nav ul li a:focus, .menu-icon a:focus, .top-nav ul li a:active, .menu-icon a:active{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+/*    z-index: 100;*/
+}
+
+.logo {
+	color: black;
+}*/

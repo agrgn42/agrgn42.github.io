@@ -1,0 +1,34 @@
+body {
+	background-color: #5c0099;
+}
+
+form {
+	background-color: #5c0099;
+}
+
+/*input {
+	background-color: #ccc;
+	border-color: ccc;
+}
+*/
+
+legend {
+	font-size: 1.25em;
+	color: #ccc;
+}
+
+label {
+	color: #ccc;
+}
+
+label.heading {
+	color: #ccc;
+}
+
+p {
+	color: #bfbfbf;
+}
+
+h1 {
+	color: #ccc;
+}
