@@ -257,7 +257,7 @@ text {
 
 form {
 	border: none;
-	background: white;
+	background: #990033;
 /*	padding-top: 8%;
 	padding-left: 2%;
 	padding-right: 2%;
@@ -358,10 +358,10 @@ label.heading {
 
 input[type=submit] {
 	font-family: 'Kanit', sans-serif;
-    padding:10px 20px;
+    padding:7px 15px;
     font-size: 16px;
-    color: white;
-    background:tan;
+    color: black;
+    background:#ccc;
     border:.1em;
     border-color: black;
     cursor:pointer;
