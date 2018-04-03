@@ -28,6 +28,16 @@ a {
 
 a.logo-text {
 	background: radial-gradient(ellipse at center, rgba(255,255,255, 1) 0%, rgba(255,255,255, 1) 60%, rgba(255,255,255, 0) 80%);
+	color: black;
+
+}
+
+a.logo-text:hover, a.logo-text:focus, a.logo-text:active{
+/*    color: gray;*/
+	color: black;
+    font-weight: bold;
+    text-decoration: none;
+/*    z-index: 100;*/
 }
 
 a.intext {
@@ -108,6 +118,7 @@ header{
     position: absolute;
     top: 0;
     z-index: 1;
+    display:flex;
 }
 
 nav {
@@ -115,7 +126,6 @@ nav {
 	width: 100%;
 }
 
-/*mobile-first*/
 .top-nav ul{
 	display: inline-flex;
 	flex-direction: row;
@@ -125,32 +135,22 @@ nav {
 	padding-top: 1.6em;
 	padding-right: 1em;
 	background: radial-gradient(ellipse at center, rgba(255,255,255, 1) 0%,  rgba(255,255,255, 0) 80%);
-
-
 }
 
 .top-nav ul li a{
 	font-size: 1em;
 	color: black;	
-	/*background: linear-gradient(to bottom,  rgba(0, 0, 0, 0), rgba(255,255,255, 1),  rgba(0, 0, 0, 0)), linear-gradient(to right,  rgba(0, 0, 0, 0), rgba(255,255,255, 1),  rgba(0, 0, 0, 0));
-*/	text-decoration: none;
+	text-decoration: none;
 	padding: 2.5em 1em 1em 1em;
-
-	
-	
-/*	z-index: 100;*/
 }
 
 .menu-icon a{
 	color: black;
-/*	z-index: 100;*/
 }
 
 .top-nav ul li a.current-page{
-/*	color: gray;*/
 	text-decoration: underline;
 	font-weight: bold;
-/*	z-index: 100;*/
 }
 
 .top-nav ul li a:hover, .menu-icon a:hover, .top-nav ul li a:focus, .menu-icon a:focus, .top-nav ul li a:active, .menu-icon a:active{
@@ -518,6 +518,29 @@ img.image1:hover, img.image2:hover, img.image3:hover, img.image1:focus, img.imag
 /*    z-index: 100;*/
 }
 
+
+
+#dialog {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255,255,255,.5);
+	text-align: center;
+	margin: 0;
+	z-index:5;
+}
+
+
+p.pintro-page {
+	font-size: 1.5em;
+	width: 50%;
+	background-color: rgba(255,255,255,.9);
+	border: solid #ccc 1px;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 40vh;
+	margin-top: 30vh;
+	z-index: 5;
+}
 
 
 
