@@ -1,7 +1,20 @@
-body {
+/*body {
 	background-color: #86592d;
 }
 
 main {
 	background-color: #86592d;
+}
+
+footer p {
+	background: none;
+}
+
+p {
+	color: #ccc;
+}*/
+
+
+.top-nav ul{
+	background: none;
 }

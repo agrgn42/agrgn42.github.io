@@ -1,53 +1,66 @@
-body {
-	background-color: #990033;
+/*body {
+	background-color: #ecd8c6;
 }
 
+main {
+	background-color: #ecd8c6;
+}
+
+form {
+	background-color: #ecd8c6;
+}
+*/
 
 legend {
 	font-size: 1.25em;
-	color: #ccc;
+	color: black;
+	font-weight: bold;
 }
 
 label {
-	color: #ccc;
+	color: black;
 }
 
 label.heading {
-	color: #ccc;
+	color: black;
 }
 
 p {
-	color: #bfbfbf;
+	color: black;
 }
 
 h1 {
-	color: #ccc;
-}
-
-
-/*header {
-	color:black;
-}
-
-a {
 	color: black;
-}*/
+}
+
+header {
+	color: black;
+}
+nav {
+	color: black;
+}
 
 
-/*
+nav {
+	display: flex;
+	width: 100%;
+}
+
+
+.top-nav ul{
+	background: none;
+}
+
 .top-nav ul li a{
-
 	color: black;
 }
-
 
 .menu-icon a{
 	color: black;
-
 }
 
 .top-nav ul li a.current-page{
-	color:black;
+	color: black;
 	text-decoration: underline;
 /*	z-index: 100;*/
 }
@@ -56,9 +69,23 @@ a {
     color: black;
     font-weight: bold;
     text-decoration: underline;
-/*    z-index: 100;*/
 }
+
 
 .logo {
 	color: black;
-}*/
+}
+
+a {
+	color:black;
+}
+
+footer p {
+	background: none;
+}
+
+
+
+
+
+

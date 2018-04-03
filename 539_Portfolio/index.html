@@ -13,6 +13,9 @@
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
       <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
 
 
@@ -22,7 +25,7 @@
   <header>
     <nav id = "top-nav" class="top-nav">
       <div class="logo">
-        <a href="index.html">#DANCEMAP</a>
+        <a href="index.html" class="logo-text">#DANCEMAP</a>
           </div>
             <ul>
                 <li><a class="current-page" href="index.html">Home</a></li>
@@ -38,7 +41,7 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXJncmduIiwiYSI6ImNpamJvanpiNjAwZWR1bWx4YmE3anB1cWkifQ.UIFUr4kbSAzIo7Sjmkdrrw'
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/argrgn/cjfg3zop21e8w2sqofuo35bum'
+      style: 'mapbox://styles/argrgn/cjfiw80x846p52rrv28nxd11f'
     });
     
     map.on('click', function(e) {
@@ -57,132 +60,74 @@
       .setHTML('<h3>' + feature.properties.photo_title + '</h3><h3><a class="maplink" href=' + feature.properties.photo_url + '>' +feature.properties.photo_url + '</a></h3>')
       .setLngLat(feature.geometry.coordinates)
       .addTo(map);
+
     });
 
+    // map.fireEvent('click', {
+    //   latlng: L.latLng(37.43125 59.089965)
+    //   });
+
 
     </script>
-  
-<!--   <div id="map" class="svg-container"></div>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="//d3js.org/topojson.v1.min.js"></script>
+
+    <!-- use this for popup-->
+    <div id="intro-page">
+      <div id="dialog" class="window">
+        <div>
+          <p> Welcome to #DANCEMAP. Click on markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
+        </div>
+      </div>
+      <div id="back"></div>
+    </div>
+
+
     <script>
+      $(document).ready(function() {    
 
-      var width = 1100,
-          height = 200
-          active = d3.select(null);
-
-      var aspect = width / height,
-          map = d3.select('#map');
-
-      d3.select(window)
-        .on("resize", function() {
-        var targetWidth = map.node().getBoundingClientRect().width;
-          map.attr("width", targetWidth);
-          map.attr("height", targetWidth / aspect);
-      });
-
-      var svg = d3.select("#map")
-          .append("svg:svg")
-          .attr("viewBox", "0 0 1280 400")
-          .attr("preserveAspectRatio", "xMidYMid meet")
-          .call(d3.zoom().on("zoom", function () {
-             svg.attr("transform", d3.event.transform)
-          }))
-          .append("g");
-
-      var projection = d3.geoMercator()
-            .scale(204)
-            .translate([width / 2, height / 2]);
-
-          var path = d3.geoPath()
-            .projection(projection)
-
-      // var g = svg.append("g")
-      //     .style("stroke-width", "1.5px");
-
-      d3.json("states_provinces_topo.json", function(data) {
-
-          console.log(data);
-
-          var subunits = topojson.feature(data, data.objects.ne_10m_admin_1_states_provinces);
-
-          var tooltip = d3.select(".subunit-label")
-            .append("div")
-            .style("position", "absolute")
-            .style("z-index", "1000")
-            .style("visibility", "hidden")
-            // .data(subunits.features)
-            // .enter().append("text")
-            .attr("class", function(d) {return "subunit-label " + d.id;})
-            // .attr("transform", function(d) {return "translate(" + path.centroid(d) + ")";})
-            .attr("dy", ".1em")
-            .text(function(d) {return d.properties.name});
-                 
-          svg.selectAll(".subunit svg")
-            .data(subunits.features)
-            .enter().append("path")
-            .attr("class", function(d) {return "subunit " + d.id;})
-            .attr("d", path)
-            .append("svg:subunit-label")
-            .on("mouseover", function(d){return tooltip.style("visibility", "visible");})
-            .on("mousemove", function(d){return tooltip.style("top",
-                (d3.event.pageY-1000)+"px").style("left",(d3.event.pageX+1000)+"px");})
-            .on("mouseout", function(d){return tooltip.style("visibility", "hidden");});
+          var id = '#dialog';
         
-
-          svg.append("path")
-            .datum(topojson.mesh(data, data.objects.ne_10m_admin_1_states_provinces))
-            .attr("d", path)
-            .attr("class", "subunit-boundary");
-
-
-          projection.fitSize([width, height], subunits);
-
-
-
-          // function hover(){
-          //     svg.selectAll(".subunit-label")
-          //       .data(subunits.features)
-          //       .enter().append("text")
-          //       .attr("class", function(d) {return "subunit-label " + d.id;})
-          //       .attr("transform", function(d) {return "translate(" + path.centroid(d) + ")";})
-          //       .attr("dy", ".1em")
-          //       .text(function(d) {return d.properties.name});
-          // }
-      // function clicked(d) {
-      //     if (active.node() === this) return reset();
-      //     active.classed("active", false);
-      //     active = d3.select(this).classed("active", true);
-
-      //     var bounds = path.bounds(d),
-      //         dx = bounds[1][0] - bounds[0][0],
-      //         dy = bounds[1][1] - bounds[0][1],
-      //         x = (bounds[0][0] + bounds[1][0]) / 2,
-      //         y = (bounds[0][1] + bounds[1][1]) / 2,
-      //         scale = .9 / Math.max(dx / width, dy / height),
-      //         translate = [width / 2 - scale * x, height / 2 - scale * y];
-
-      //     g.transition()
-      //         .duration(750)
-      //         .style("stroke-width", 1.5 / scale + "px")
-      //         .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-      //   }
-
-      //   function reset() {
-      //     active.classed("active", false);
-      //     active = d3.select(null);
-
-      //     g.transition()
-      //         .duration(750)
-      //         .style("stroke-width", "1.5px")
-      //         .attr("transform", "");
-      //   }
-
+          //Get the screen height and width
+          var maskHeight = $(document).height();
+          var maskWidth = $(window).width();
+        
+          //Set heigth and width to mask to fill up the whole screen
+          $('#back').css({'width':maskWidth,'height':maskHeight});
+          
+          //transition effect   
+          $('#back').fadeIn(500); 
+          $('#back').fadeTo("slow",0.9);  
+        
+          //Get the window height and width
+          var winH = $(window).height();
+          var winW = $(window).width();
+                    
+          //Set the popup window to center
+          $(id).css('top',  winH/2-$(id).height()/2);
+          $(id).css('left', winW/2-$(id).width()/2);
+        
+          //transition effect
+          $(id).fadeIn(2000);   
+        
+        //if close button is clicked
+        $('.window .close').click(function (e) {
+          //Cancel the link behavior
+          e.preventDefault();
+          
+          $('#back').hide();
+          $('.window').hide();
+        });   
+        
+        //if mask is clicked
+        $('#back').click(function () {
+          $(this).hide();
+          $('.window').hide();
+        });   
+        
       });
 
-      // , function(a, b) { return a !== b; }
     </script>
- -->
+
+
 
   <footer>
     <p>This site was created by Angela Schöpke &copy; 2018</p>

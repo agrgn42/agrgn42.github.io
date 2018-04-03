@@ -42,29 +42,30 @@ if($_POST["form"]) {
   
 
   <div class="submitform">
-    <form name="application" action="contact.php" method="post">
-      <h1 id="title">Submit your dance media!</h1>
+    <form name="application" action="mailto:angela.schopke@gmail.com" method="post" enctype="text/plain">
+      <h1 id="title">Submit your dance story</h1>
         <!-- Content -->
         <fieldset>
           <legend>About the Dance</legend><br>
           
-          <label class="heading"> Name of the dance you'd like to share:<input type="text" name="dancename" autofocus required>
-          </label><br>
+          <label class="heading"> Name of the dance you'd like to share:<br>
+            <input type="text" name="dancename" autofocus required>
+            </label>
           <p>Select the name of the dance you'd like to share a story about.</p>
 
           <label class="heading">Dance Location</label>
           <p>Where was this photo / video / text media created?</p>
           
-          <label for="lname">Country:  <select id="countries_states1" class="input-medium bfh-countries" data-country="US" required></select></label><br>
+          <label for="lname">Country:<br><select id="countries_states1" class="input-medium bfh-countries" data-country="US" required></select></label>
           <p>Please select the appropriate country from the drop-down menu.</p>
           
-          <label>Province or State: <select class="input-medium bfh-states" data-country="countries_states1" required></select></label><br>
+          <label>Province or State:<br><select class="input-medium bfh-states" data-country="countries_states1" required></select></label>
           <p>Please select the appropriate province or state from the drop-down menu.</p>
           
-          <label>City: <input type="text" name="city" required></label><br> <!--doesn't work-->
+          <label>City:<br><input type="text" name="city" required></label>
           <p>Please select the appropriate city from the drop-down menu.</p>
 
-          <label> Address: <input type="text" id="address" name="address" size="50" placeholder = "1234 N Wells St"></label><br>
+          <label> Address:<br><input type="text" id="address" name="address" size="50" placeholder = "1234 N Wells St"></label>
           <p>Optional. If you fill out, the required input format is "55555 Street Name"</p>
 
         </fieldset><br>
@@ -74,15 +75,15 @@ if($_POST["form"]) {
 
         <label class="heading">Photos of the dance</label><br>
         
-        <label>Upload photos: <input type="file" name="photos" accept="application/jpeg application/png"></label><br>
+        <label>Upload photos:<br><input type="file" name="photos" accept="application/jpeg application/png"></label><br><br>
         
-        <label>Photo credit: <input type="text" name="photocredit"></label><br>
-        <p>If you have taken the uploaded photo(s), please note that you are to be credited for the photos. If you did not take the uploaded photo(s), please include the URL of the website(s) you found the photo(s) on, the date(s) they were published, and the name of the photographer(s). We WILL NOT publish any photos without credits.</p>
+        <label>Photo credit:<br><input type="text" name="photocredit"></label><br>
+        <p>If you have taken the uploaded photo(s), please note that you are to be credited for the photos. If you did not take the uploaded photo(s), please include the URL of the website(s) you found the photo(s) on, the date(s) they were published, and the name of the photographer(s). We WILL NOT publish any photos without credits.</p><br>
         
         <label class="heading">Videos of the dance</label><br>
 
-        <label>Input video URL: <input type="url" name="website" placeholder="https://www.youtube.com"></label><br>
-        <p>Currently, we only accept YouTube links. Required input format is "http://www.youtube.com/..." or "https://www.youtube.com/,,,".</p>
+        <label>Input video URL:<br><input type="url" name="website" placeholder="https://www.youtube.com"></label><br>
+        <p>Currently, we only accept YouTube links. Required input format is "http://www.youtube.com/..." or "https://www.youtube.com/...".</p>
         </fieldset><br>
 
 
@@ -100,9 +101,6 @@ if($_POST["form"]) {
          
           <label class="heading">Gender: <input type="text" name="gender"></label><br> 
           <p>Which gender do you identify most closely with? Though sometimes it can be difficult to talk about, gender is an important part of many dances and global culture. This info will help us to understand the important lens of diversity that gender lends to the global community. Feel free to make note of as many genders as you identify with, using commas to separate each value.</p> 
-
-          <label class="heading">Ethnicity: <input type="text" name="gender"></label><br> 
-          <p>Which ethnicity do you identify most closely with? Like gender, ethnicity can be a hard topic to discuss. We feel talking about ethnicity is important to understanding the vibrant fabric that makes up Global Afghanistan. Feel free to make note of as many ethnicities as you identify with, using commas to separate each value.</p> 
 
           <label class="heading">Year of birth: <input type="text" name="gender"></label><br> 
           <p>Which year were you born? Like gender, ethnicity can be a hard topic to discuss. We feel talking about ethnicity is important to understanding the vibrant fabric that makes up Global Afghanistan. Feel free to make note of as many ethnicities as you identify with, using commas to separate each value.</p> 
