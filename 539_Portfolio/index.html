@@ -13,9 +13,7 @@
       <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   </head>
 
 
@@ -74,54 +72,24 @@
     <div id="intro-page">
       <div id="dialog" class="window">
         <div>
-          <p> Welcome to #DANCEMAP. Click on markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
+          <p class='pintro-page'>Welcome to #DANCEMAP. Click on markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
         </div>
       </div>
-      <div id="back"></div>
+<!--       <div id="back"></div> -->
     </div>
 
 
     <script>
       $(document).ready(function() {    
 
-          var id = '#dialog';
-        
-          //Get the screen height and width
-          var maskHeight = $(document).height();
-          var maskWidth = $(window).width();
-        
-          //Set heigth and width to mask to fill up the whole screen
-          $('#back').css({'width':maskWidth,'height':maskHeight});
-          
-          //transition effect   
-          $('#back').fadeIn(500); 
-          $('#back').fadeTo("slow",0.9);  
-        
-          //Get the window height and width
-          var winH = $(window).height();
-          var winW = $(window).width();
-                    
-          //Set the popup window to center
-          $(id).css('top',  winH/2-$(id).height()/2);
-          $(id).css('left', winW/2-$(id).width()/2);
-        
           //transition effect
-          $(id).fadeIn(2000);   
+          $('#dialog').fadeIn(2000);   
         
-        //if close button is clicked
-        $('.window .close').click(function (e) {
-          //Cancel the link behavior
-          e.preventDefault();
-          
-          $('#back').hide();
-          $('.window').hide();
-        });   
-        
-        //if mask is clicked
-        $('#back').click(function () {
-          $(this).hide();
-          $('.window').hide();
-        });   
+          //if mask is clicked
+          $('#dialog').click(function () {
+            $(this).hide();
+            $('#pintro-page').hide();
+          });
         
       });
 
@@ -133,7 +101,9 @@
     <p>This site was created by Angela Schöpke &copy; 2018</p>
   </footer>
 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
  
 
 </body>
