@@ -38,7 +38,7 @@ section.images {
 
 
 /*
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .top-nav a:not(:first-child) {display: none;}
   .top-nav a.icon {
     float: right;
@@ -46,7 +46,7 @@ section.images {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .top-nav.responsive {position: relative;}
   .top-nav.responsive .icon {
     position: absolute;
@@ -59,11 +59,32 @@ section.images {
     text-align: left;
   }
 }
-
 */
 
-@media only screen and (min-width: 600px) {
 
+@media only screen and (max-width: 1200px) {
+  section.images img.image1{
+    display:none;
+  }
+
+  section.images img.image3{
+    margin-top: 18vh;
+    margin-right: 30vh;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+  section.images img{
+
+    display:none;
+  }
+
+
+  section.aboutbody {
+    width: 90%;
+  }
 
 
 
