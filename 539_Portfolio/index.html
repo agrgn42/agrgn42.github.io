@@ -7,11 +7,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
   <!--Style-->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
       <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/responsive.css">
   </head>
 
 
@@ -56,6 +59,7 @@
       .setHTML('<h3>' + feature.properties.photo_title + '</h3><h3><a class="maplink" href=' + feature.properties.photo_url + '>' +feature.properties.photo_url + '</a></h3>')
       .setLngLat(feature.geometry.coordinates)
       .addTo(map);
+      $('h3').css({"font-family": "'Kanit', sans-serif", "font-size":"1.17em" });
 
     });
 
@@ -63,34 +67,99 @@
     //   latlng: L.latLng(37.43125 59.089965)
     //   });
 
-
     </script>
 
     <!-- use this for popup-->
-    <div id="intro-page">
-      <div id="dialog" class="window">
+    
+    <!-- <div id="dialog" class="window"> -->
+    <div class="cover"></div>
+    <div class="popup">
         <div>
-          <p class='pintro-page'>Welcome to #DANCEMAP. Click on markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
+        <p class='pintro-page'>Welcome to #DANCEMAP. Click markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo from that location. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
         </div>
-      </div>
-<!--       <div id="back"></div> -->
     </div>
 
 
+
     <script>
-      $(document).ready(function() {    
-
-          //transition effect
-          $('#dialog').fadeIn(2000);   
-        
-          //if mask is clicked
-          $('#dialog').click(function () {
-            $(this).hide();
-            $('#pintro-page').hide();
-          });
-        
+      $(document).ready(function() {
+          $(".popup").fadeIn(500);
+          $(".cover").fadeIn(500);
       });
+    
+    $(".cover").click(function () {
+        $(".popup").fadeOut(500);
+        $(".cover").fadeOut(500);
+    });
 
+        //   var id = '#dialog';
+        
+        //   //Get the screen height and width
+        //   var maskHeight = $(document).height();
+        //   var maskWidth = $(window).width();
+        
+        //   //Set heigth and width to mask to fill up the whole screen
+        //   $('#mask').css({'width':maskWidth,'height':maskHeight});
+          
+        //   //transition effect   
+        //   $('#mask').fadeIn(500); 
+        //   $('#mask').fadeTo("slow",0.9);  
+        
+        //   //Get the window height and width
+        //   var winH = $(window).height();
+        //   var winW = $(window).width();
+                    
+        //   //Set the popup window to center
+        //   $(id).css('top',  winH/2-$(id).height()/2);
+        //   $(id).css('left', winW/2-$(id).width()/2);
+        
+        //   //transition effect
+        //   $(id).fadeIn(2000);   
+        
+        // //if close button is clicked
+        // $('.window .close').click(function (e) {
+        //   //Cancel the link behavior
+        //   e.preventDefault();
+          
+        //   $('#mask').hide();
+        //   $('.window').hide();
+        // });   
+        
+        // //if mask is clicked
+        // $('#mask').click(function () {
+        //   $(this).hide();
+        //   $('.window').hide();
+        // });   
+  
+
+        //   // $('.window').css({
+        //   //   'width': '100%';
+        //   //   'height': '100%';
+        //   //   'background-color': 'rgba(255,255,255,.7)';
+        //   //   'text-align': 'center';
+        //   //   'margin': '0';
+        //   //   // 'z-index':'5';
+        //   // })
+
+        //   //transition effect
+        //   $('.window').fadeTo(2000, 1);});
+
+      //if mask is clicked
+      // $('.window').click(function (e) {
+      //   // $(this).hide();
+      //   $(this).hide();
+      // });
+
+
+// $(".open").click(function () {
+//     $(".popup").fadeIn(500);
+//     $(".cover").fadeTo(500, 0.5);
+// });
+
+// $(".close").click(function () {
+//     $(".popup").fadeOut(500);
+//     $(".cover").fadeOut(500);
+// });
     </script>
 
 
@@ -101,7 +170,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
  
 

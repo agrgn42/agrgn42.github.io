@@ -29,13 +29,10 @@ a {
 a.logo-text {
 	background: radial-gradient(ellipse at center, rgba(255,255,255, 1) 0%, rgba(255,255,255, 1) 60%, rgba(255,255,255, 0) 80%);
 	color: black;
-
 }
 
 a.logo-text:hover, a.logo-text:focus, a.logo-text:active{
-/*    color: gray;*/
-	color: black;
-    font-weight: bold;
+	color: #ff0066;
     text-decoration: none;
 /*    z-index: 100;*/
 }
@@ -148,21 +145,20 @@ nav {
 }
 
 .top-nav ul li a.current-page{
+	color: #ff0066;
 	text-decoration: underline;
 	font-weight: bold;
 }
 
 .top-nav ul li a:hover, .menu-icon a:hover, .top-nav ul li a:focus, .menu-icon a:focus, .top-nav ul li a:active, .menu-icon a:active{
-/*    color: gray;*/
+	color: #ff0066;
     font-weight: bold;
     text-decoration: underline;
-/*    z-index: 100;*/
 }
 
 
 /*-----LOGO-----*/
 .logo {
-/*	background-color: black; */
 	margin: 0;
 	padding: .5em;
 	display: inline-flex;
@@ -175,10 +171,7 @@ nav {
 	text-decoration: none;
 }
 
-/*.logo img{
-	height: 4em;
-}
-*/
+
 /*-----FOOTER-----*/
 footer {
 	position:fixed;
@@ -225,8 +218,21 @@ text {
 form {
 	border: none;
 /*	background: #990033;*/
-	width: 98%;
-	text-align: center;
+	width: 50%;
+/*	text-align: center;*/
+	
+}
+
+
+.contactform {
+	/*height: 65vh;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submitform {
+	margin-left: 5vh;
 }
 
 
@@ -240,19 +246,6 @@ main{
 	overflow: scroll;
 }
 
-.contactform {
-	/*height: 65vh;*/
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.submitform {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom:;
-}
 
 form label {
 /*	width: 75%;*/
@@ -269,12 +262,30 @@ form ol ol li {
 	float: left;
 }
 
+
+legend {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.legend-color {
+	color: #ff0066;
+}
+
+hr {
+	width: 70%;
+	border: solid #ccc .5px;
+
+}
+
+
 input {
 	margin-top:1%;
 	border-color: black 1px;
 	height: 2em;
 	font-family: 'Kanit', sans-serif;
 	font-weight: bold;
+	width: 30%;
 }
 
 button {
@@ -304,18 +315,12 @@ p.intext {
 	text-indent: 0;
 }
 
-p.pcontact {
-	margin-left: 4%;
-	color: black;
-	font-size: .75em;
-	padding-bottom: 1em;
-}
 
 label.heading {
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 1.2em;
 	color: black;
-	padding: 1% 2%;
+	/*padding: 1% 2%;*/
 }
 
 input[type=submit] {
@@ -329,19 +334,12 @@ input[type=submit] {
     border-color: black;
     cursor:pointer;
     text-align: center;
-/*    display: flex;
-	justify-content: center;
-	align-items: center;*/
-
+    width: 10em;
 }
+
 
 input[type=file] {
 	padding-left: 10%;
-}
-
-input.contact {
-	margin-left: 0%;
-	width: 30%;
 }
 
 
@@ -366,7 +364,7 @@ textarea {
 }
 
 
------ABOUT PAGE-----
+/*-----ABOUT PAGE-----*/
 
 
 .top-nav ul.no-back{
@@ -441,23 +439,6 @@ section.aboutbody p {
 
 
 
-/* ------- POPUP ------- */
-.window {
-	top: 199.5px;
-	left: 551.5px;
-	display: none;
-}
-
-#back {
-	width: 1478px; 
-	font-size: 32pt; 
-	color:white; 
-	height: 602px; 
-	display: none; opacity: 0.8;
-}
-
-
-
 
 
 /*------ IMAGE ------- */
@@ -510,35 +491,69 @@ img.image3 {
 
 }
 
+img.image4 {
+	border-radius:50%;
+	width: 450px;
+	height: 450px;
+	margin-top: 25vh;
+	margin-left: -10vh;
+	opacity: 0.5;
+	position: absolute;
+}
 
-img.image1:hover, img.image2:hover, img.image3:hover, img.image1:focus, img.image2:focus, img.image3:focus, img.image1:active, img.image2:active, img.image3:active{
+img.image5 {
+	border-radius:50%;
+	width: 300px;
+	height: 300px;
+	margin-top: 90vh;
+	margin-left:-55vh;
+	opacity: 0.5;
+	position: absolute;
+}
+
+img.image6 {
+	border-radius:50%;
+	width: 200px;
+	height: 200px;
+	margin-top: 135vh;
+	margin-left:-25vh;
+	opacity: 0.5;
+	position: absolute;
+}
+
+
+img.image1:hover, img.image2:hover, img.image3:hover, img.image4:hover, img.image5:hover,img.image6:hover,img.image1:focus, img.image2:focus, img.image3:focus, img.image4:focus, img.image5:focus,img.image6:focus{
 /*    color: gray;*/
     opacity: 1;
 /*    z-index: 100;*/
 }
 
 
+/* ------- POPUP ------- */
 
-#dialog {
+.cover {
+	display:none;
+	position: fixed;
 	width: 100%;
-	height: 100vh;
-	background-color: rgba(255,255,255,.5);
-	text-align: center;
+	height: 100%;
+	background-color: rgba(255,255,255,.7);
 	margin: 0;
-	z-index:5;
+}
+
+.popup {
+	display: none;
+    position:fixed;
+    border:solid #ccc 1px;
+    width: 50%;
+    font-size: 1.75em;
+    border-radius: 20px;
+    margin: 30vh 0 0 40vh;
+    background-color:rgba(255,255,255,.9);
 }
 
 
 p.pintro-page {
-	font-size: 1.5em;
-	width: 50%;
-	background-color: rgba(255,255,255,.9);
-	border: solid #ccc 1px;
-	border-radius: 20px;
-	text-align: center;
-	margin-left: 40vh;
-	margin-top: 30vh;
-	z-index: 5;
+	padding: 1em;
 }
 
 
