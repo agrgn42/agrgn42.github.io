@@ -190,7 +190,7 @@ footer {
    	text-align: center;
 
 }
-footer p{
+footer p {
 	padding-top: 1.5em;
 	padding-bottom: .75em;
 	font-family: 'Kanit', sans-serif;
@@ -272,15 +272,22 @@ form ol ol li {
 
 input {
 	margin-top:1%;
-/*	background-color: #cccccc;*/
+	border-color: black 1px;
+	height: 2em;
+	font-family: 'Kanit', sans-serif;
+	font-weight: bold;
 }
 
 button {
 	margin-top:.5%;
 }
 
+/*select {*/
+	/*margin: .5% 0 .5% 2%;*/
 select {
-	margin: .5% 0 .5% 2%;
+	height: 2em;
+	font-family: 'Kanit', sans-serif;
+	font-weight: bold;
 }
 
 p {
@@ -300,6 +307,9 @@ p.intext {
 
 p.pcontact {
 	margin-left: 4%;
+	color: black;
+	font-size: .75em;
+	padding-bottom: 1em;
 }
 
 label.heading {
@@ -335,9 +345,10 @@ input.contact {
 	width: 30%;
 }
 
-textarea.contact{
+
+textarea {
 	margin-left: 0%;
-	/*width: 70%;*/
+	width: 70%;
     height: 8em;
     width: 30em;
     box-sizing: border-box;
@@ -356,10 +367,21 @@ textarea.contact{
 }
 
 
-/*-----ABOUT PAGE-----*/
+-----ABOUT PAGE-----
+
+
+.top-nav ul.no-back{
+	background: none;
+}
+
+footer p.no-backp {
+	background: none;
+}
+
+
+
 
 section.aboutbody {
-/*	background-color: #86592d;*/
     width: 60%;
     position: absolute;
     left: 5%;
@@ -369,7 +391,6 @@ section.aboutbody {
 
 section.aboutbody p {
     font-size: 1.5em;
-/*    z-index: 0;*/
     margin: 0;
     animation: fadein 3s;
     -moz-animation: fadein 3s; /* Firefox */
@@ -448,9 +469,9 @@ section.images {
 	justify-content: flex-end;
 	flex: 1 0 0;
 	animation: fadein 3s;
-    -moz-animation: fadein 3s; /* Firefox */
-    -webkit-animation: fadein 3s; /* Safari and Chrome */
-    -o-animation: fadein 3s; /* Opera */
+    -moz-animation: fadein 3s;
+    -webkit-animation: fadein 3s; 
+    -o-animation: fadein 3s;
 
 }
 
