@@ -217,15 +217,14 @@ text {
 
 form {
 	border: none;
-/*	background: #990033;*/
 	width: 50%;
-/*	text-align: center;*/
+	padding-left: 3%;
+	margin-top: 7vh;
 	
 }
 
 
 .contactform {
-	/*height: 65vh;*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
