@@ -81,12 +81,11 @@
 
   .popup {
     margin-left: 15vh;
-    margin-top: 20vh;
+    margin-top: 27vh;
   }
 
   p.pintro-page {
-    padding: 1em;
-    font-size: .6em;
+    font-size: .55em;
   }
 }
 
@@ -94,14 +93,6 @@
 @media only screen and (max-width: 480px) {
   section.aboutbody {
     font-size: .75em;
-  }
-
-  p.pintro-page {
-    font-size: .55em;
-  }
-
-  .popup {
-    margin-top: 27vh;
   }
 }
 
