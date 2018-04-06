@@ -5,7 +5,6 @@
       <meta charset="UTF-8"/>
       <title>Angela's Portfolio</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--Style-->
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
@@ -15,7 +14,6 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/responsive.css">
   </head>
-
 
 
 <body class="body body-home">
@@ -36,48 +34,39 @@
 
   <div id='map'></div>
     <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJncmduIiwiYSI6ImNpamJvanpiNjAwZWR1bWx4YmE3anB1cWkifQ.UIFUr4kbSAzIo7Sjmkdrrw'
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/argrgn/cjfiw80x846p52rrv28nxd11f'
-    });
-    
-    map.on('click', function(e) {
-    var features = map.queryRenderedFeatures(e.point, {
-      layers: ['flickr-photo-analysis-sample-bjdbki'] // replace this with the name of the layer
-    });
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYXJncmduIiwiYSI6ImNpamJvanpiNjAwZWR1bWx4YmE3anB1cWkifQ.UIFUr4kbSAzIo7Sjmkdrrw'
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/argrgn/cjfiw80x846p52rrv28nxd11f'
+      });
+      
+      map.on('click', function(e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['flickr-photo-analysis-sample-bjdbki'] // replace this with the name of the layer
+      });
 
-    if (!features.length) {
-      return;
-    }
+      if (!features.length) {
+        return;
+      }
 
-    var feature = features[0];
+      var feature = features[0];
 
-    var popup = new mapboxgl.Popup({ offset: [0, -15] })
-      .setLngLat(feature.geometry.coordinates)
-      .setHTML('<h3>' + feature.properties.photo_title + '</h3><h3><a class="maplink" href=' + feature.properties.photo_url + '>' +feature.properties.photo_url + '</a></h3>')
-      .setLngLat(feature.geometry.coordinates)
-      .addTo(map);
-      $('h3').css({"font-family": "'Kanit', sans-serif", "font-size":"1.17em" });
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.photo_title + '</h3><h3><a class="maplink" href=' + feature.properties.photo_url + '>' +feature.properties.photo_url + '</a></h3>')
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map);
+        $('h3').css({"font-family": "'Kanit', sans-serif", "font-size":"1.17em" });
 
-    });
-
-    // map.fireEvent('click', {
-    //   latlng: L.latLng(37.43125 59.089965)
-    //   });
-
+      });
     </script>
 
-    <!-- use this for popup-->
-    
-    <!-- <div id="dialog" class="window"> -->
     <div class="cover"></div>
     <div class="popup">
         <div>
-        <p class='pintro-page'>Welcome to #DANCEMAP. Click markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo from that location. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page!</p>
+        <p class='pintro-page'>Welcome to #DANCEMAP. Click markers on the map to see what people are "saying" about dance in photos! Follow the hyperlinks at each marker to see the photo from that location. Add your dance photo, video, or text to the map by submitting a story through the "Your Story" page! Click outside of this box to begin navigating the map.</p>
         </div>
     </div>
-
 
 
     <script>
@@ -90,75 +79,6 @@
         $(".popup").fadeOut(500);
         $(".cover").fadeOut(500);
     });
-
-        //   var id = '#dialog';
-        
-        //   //Get the screen height and width
-        //   var maskHeight = $(document).height();
-        //   var maskWidth = $(window).width();
-        
-        //   //Set heigth and width to mask to fill up the whole screen
-        //   $('#mask').css({'width':maskWidth,'height':maskHeight});
-          
-        //   //transition effect   
-        //   $('#mask').fadeIn(500); 
-        //   $('#mask').fadeTo("slow",0.9);  
-        
-        //   //Get the window height and width
-        //   var winH = $(window).height();
-        //   var winW = $(window).width();
-                    
-        //   //Set the popup window to center
-        //   $(id).css('top',  winH/2-$(id).height()/2);
-        //   $(id).css('left', winW/2-$(id).width()/2);
-        
-        //   //transition effect
-        //   $(id).fadeIn(2000);   
-        
-        // //if close button is clicked
-        // $('.window .close').click(function (e) {
-        //   //Cancel the link behavior
-        //   e.preventDefault();
-          
-        //   $('#mask').hide();
-        //   $('.window').hide();
-        // });   
-        
-        // //if mask is clicked
-        // $('#mask').click(function () {
-        //   $(this).hide();
-        //   $('.window').hide();
-        // });   
-  
-
-        //   // $('.window').css({
-        //   //   'width': '100%';
-        //   //   'height': '100%';
-        //   //   'background-color': 'rgba(255,255,255,.7)';
-        //   //   'text-align': 'center';
-        //   //   'margin': '0';
-        //   //   // 'z-index':'5';
-        //   // })
-
-        //   //transition effect
-        //   $('.window').fadeTo(2000, 1);});
-
-      //if mask is clicked
-      // $('.window').click(function (e) {
-      //   // $(this).hide();
-      //   $(this).hide();
-      // });
-
-
-// $(".open").click(function () {
-//     $(".popup").fadeIn(500);
-//     $(".cover").fadeTo(500, 0.5);
-// });
-
-// $(".close").click(function () {
-//     $(".popup").fadeOut(500);
-//     $(".cover").fadeOut(500);
-// });
     </script>
 
 
