@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url('../images/halftone-yellow.png');
+}
+
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+.image {
+	width: 50%;
+	border: solid 5px blue;
+	padding: 5%;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+	white-space: nowrap;
+}
+
+.button {
+	display: inline-block;
+}
+
+
+.big1 {
+	display: block;
+	width: 100%;
+}
+
+
+.big {
+	display: block;
+
+}
+
+

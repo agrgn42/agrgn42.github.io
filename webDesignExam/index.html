@@ -3,26 +3,49 @@
 <head>
 	<title>Web Design Exam</title>
 	<link rel='stylesheet' type='text/css' href= 'css/style.css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
 <h1>Angela Mariana Schöpke Gonzalez</h1>
 
-<div>
-	<img src='images/examPic.JPG' alt="Professor Van Lent having similing while two people play with a dinosaur cutout.">
+
+<script>
+	$(document).ready(function() {
+		$('#hide').click(function() {
+			$('#colleen').hide()
+			// $('#umsi').css({'display': 'block', 'padding-left': '50%'});
+			$('.big1').css({'float': 'center','width': '100%', 'height': 'auto', 'padding-left': '40vh'})
+			// $('.big').css({'float': 'left','width': '100%', 'height': 'autho', 'padding-left': '40vh'})
+		})
+		$('#show').click(function() {
+			$('#colleen').show()
+			$('.big1').css({'width': 'auto', 'padding-left': '0'})
+		})
+
+	})
+</script>
+
+
+
+<div class="big1">
+	<div class="image" id="colleen">
+		<img src='images/examPic.JPG' alt="Professor Van Lent having similing while two people play with a dinosaur cutout.">
+	</div>
+	<div class="image" id="umsi">
+		<img src='images/UMSI-logo.jpg' alt="University of Michigan School of Information logo.">
+	</div>
 </div>
 
-<div>
-	<img src='images/UMSI-logo.jpg' alt="University of Michigan School of Information logo.">
-</div>
 
+<div class="big">
+	<div class="button" id='hide'> 
+		<button type="button">Hide Image</button>
+	</div>
 
-<div>
-	<button type="button">Hide Image</button>
-</div>
-
-<div>
-	<button type="button">Show Image</button>
+	<div class="button" id='show'>
+		<button type="button">Show Image</button>
+	</div>
 </div>
 
 
