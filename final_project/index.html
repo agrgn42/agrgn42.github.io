@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accessibility Assessment</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<h1>Designers Accessibility Assessment</h1>
+
+		<h2>1: Make sure there is enough contrast between text and its background color</h2>
+			<h3>Assessment</h3>
+			<p>This website experiences 20 contrast errors (i.e. ratio between text and text background is less than 4.5 to 1, or 3 to 1 in instances of 24px or 19px bold font type). Examples of these errors follow. These errors present obvious barriers to the site's accessibility.</p>
+
+			<img src='images/image4.png' alt='First color contrast issue between blue and grey hues.'>
+			<img src='images/image3.png' alt='Second color contrast issue between two grey hues.'>
+			<img src='images/image2.png' alt='Third color contrast issue between two grey hues.'>
+			<img src='images/image1.png' alt='Fourth color contrast issue between white and grey hues.'>
+
+			<h3>Recommendations</h3>
+			<p>This website may consider alternative color choices for its site. Drawing upon its appropriately contrasting primary brand colors, Maize (hex color code #ffcb05) and Blue (hex color code #00274c) with contrast ratio 9.89 to 1, the site may consider replacing some of the insufficiently contrasting color pairs with the site's brand color pair or variations thereof. In the first error example displayed above, for example, by replacing the foreground color along with Maize, the new color pair would achieve a contrast ratio of 8.42 to 1, making the feature far more accessible. </p>
+
+		<h2>2: Don't indicate important information using color alone</h2>
+			<h3>Assessment</h3>
+			<p>No items on the page offer any indication of a link being active on hover, click, or tabbing aside from a change in color. Navigation bar links only feature color change on click, but no other indicator that item is active. Given that the hamburger menus that appear on navigation link click have similar color schemes to the images and page content layers beneath them, it is difficult to discern that these menus' appearances on click represent an active state.</p>
+
+			<h3>Recommendations</h3>
+			<p>The website may consider indicating that a link is in an active state using underlines. Though this may seem a minor change, an underline can make a significant difference to accessibility, especially in instances where the color change as indicator of activity offers a low color contrast. Given that this site experiences low color contrast issues across most of its color pair choices, an underline on active state would provide a notable improvement to the site accessibility.</p>
+
+		<h2>3: Pair values of colors together (not only hues) to increase contrast</h2>
+			<h3>Assessment</h3>
+			<p>Many of the color value pairs that render contrast errors in point one suffer from low value contrast. Overall contrast could be improved by increasing the difference in values.</p>
+
+		<h2>4: Don't rely on sensory characteristics as the sole indicator for understanding and operating content</h2>
+			<h3>Assessment</h3>
+			<p>Outside of changing color on links, there are no other indications to a site user for how to understand and operate site content.</p>
+
+			<h3>Recommendations</h3>
+			<p>The site may consider a couple of simple initial additions of informational text to improve content accessibility. For example, in order that a user understands that each of the links listed in gallery format below the "Interdisciplinary Research Initiatives" heading provide more information about each of these initiatives, the site may consider including a subheading that reads "Click on the "Go" button below any of the images below to learn more about the University of Michigan's Interdisciplinary Research Initiatives." Similarly, in the content section described by the "Other Key Initiatives" heading, the site may consider including a subheading that reads, "To learn more about our other key initiatives, click on any of the links below." Each of these additional can improve a site visitor's understanding of how to operate content.</p>
+
+		<h2>5: Design focus states to help users navigate and understand where they are</h2>
+			<h3>Assessment</h3>
+			<p>Though focus states are not hidden, as discussed in earlier sections, the document's active and focus states do not offer sufficient change from base state in order to indicate focus in general. See the "Recommendation" section below point two for thoughts on how to address this issue.</p>
+
+		<h2>6: Help users understand inputs, and help them avoid and correct mistakes</h2>
+			<h3>Assessment</h3>
+			<p>The site features one input field. This input field is hidden from view until a user clicks on the magnifying glass. No prompt is provided for the user to understand what type of input would be appropriate to input in this search field. Indeed, though a magnifying glass may be a common search indicator, nothing else indicates that searching the site's content is this input bar's function.</p>
+
+			<h3>Recommendation</h3>
+			<p>This site may consider making the input field visible on page load, rather than requiring a user to click on the magnifying glass icon, in order to improve the search function's accessibility. The input field could also be designed to include placeholder text and a brief description below the input field reading "Enter a keyword to search the contents of this website." Each of these changes would make this search functionality significantly more accessible.</p>
+
+		<h2>7: Write good alt text for your images</h2>
+			<h3>Assessment</h3>
+			<p>None of the images on this site feature alt text.</p>
+
+			<h3>Reecommendations</h3>
+			<p>An appropriate step to significantly improving accessibility of the site would be to include alt text for each image. While adding alt text, the site should strongly consider describing all of the elements that explain what's happening in the image in order to make image content semantically accessible to site visitors using screen readers, or in the event that a web browser is unable to load an image.</p>
+
+		<h2>8: If an experience cannot be made accessible, create another route for users to get that information</h2>
+			<h3>Assessment</h3>
+			<p>None of the experiences featured on this webpage should be impossible to make accessible.</p>
+
+		<h2>9: Be as consistent and clear as possible in layout and copy</h2>
+			<h3>Assessment</h3>
+			<p>The site is somewhat inconsistent in its layout in copy. In particular, the site content featured in the section with headers "Research Impact" and "Other Key Initiatives" seems entirely inconsistent with the rest of the site. This content features different heading types, font weight, and link colors despite its seeming semantic similarity to "Interdisciplinary Research Initiatives", for example. Related, each of this and the "Interdisciplinary Research Initiatives" sections feature links to learn more about the content described by the headings. The first section, "Research Initiatives", does not. This may be confusing to site visitors that may want to learn about "Research Initiatives", and that may expect to be able to do so by following links the same way they can in other sections.</p>
+
+
+</body>
+</html>
